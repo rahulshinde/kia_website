@@ -71,12 +71,13 @@ table {
   #site header {
     top: 0;
     position: fixed;
-    background-color: white;
+    background-color: transparent;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     height: 3.3rem;
     width: 100%;
-    border-bottom: 5px solid; }
+    border-bottom: 5px solid;
+    z-index: 100; }
     #site header #header_text {
       display: inline-block;
       vertical-align: middle;
@@ -104,11 +105,12 @@ table {
     position: fixed;
     top: 3.3rem;
     width: 100%;
-    background-color: #fff;
+    background-color: transparent;
     overflow: hidden;
-    z-index: 1;
+    z-index: 10;
     max-height: 10rem;
-    transition: max-height linear 0.3s; }
+    transition: max-height ease 0.3s;
+    -webkit-transition: max-height ease 0.3s; }
     #site #about.scroll {
       padding: 0;
       max-height: 0; }
@@ -126,15 +128,15 @@ table {
     position: fixed;
     top: 7.5rem;
     width: 100%;
-    background-color: #fff;
+    background-color: transparent;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-top: 5px solid;
     border-bottom: 5px solid;
     height: 3.3rem;
-    z-index: 10;
-    transition: top linear 0.3s;
-    -webkit-transition: top linear 0.3s; }
+    z-index: 20;
+    transition: top ease 0.3s;
+    -webkit-transition: top ease 0.3s; }
     #site #currently h1 {
       text-align: center;
       line-height: 3rem;
@@ -146,26 +148,50 @@ table {
     #site #currently.scroll {
       top: 3rem; }
   #site #projects {
-    margin-top: 8rem;
-    overflow-x: hidden; }
-  #site .image_row_general {
-    height: 400px;
-    background-color: blue; }
-    #site .image_row_general img {
-      float: left;
+    padding-top: 10.6rem;
+    overflow-x: hidden;
+    transition: padding-top ease 0.3s;
+    -webkit-transition: padding-top ease 0.3s; }
+    #site #projects.scroll {
+      padding-top: 6.2rem; }
+    #site #projects img:hover {
+      cursor: pointer; }
+  #site .image_container {
+    height: 20rem;
+    display: inline-block;
+    white-space: nowrap; }
+    #site .image_container img {
       height: 100%;
-      width: auto; }
-  #site #image_fallback {
-    display: block;
+      width: auto;
+      display: inline-block; }
+  @media screen and (max-width: 740px) {
+    #site #original {
+      display: block;
+      height: auto;
+      width: 100%; }
+      #site #original img {
+        display: block;
+        width: 100%; } }
+  #site .repeat {
+    position: relative;
+    z-index: 1;
+    margin-top: -0.2rem; }
+    @media screen and (max-width: 740px) {
+      #site .repeat {
+        display: none; } }
+  #site #modal_container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
     width: 100%;
-    text-align: center; }
-    #site #image_fallback img {
-      display: inline-block;
-      margin-left: -0.3rem;
-      margin-top: -0.2rem;
-      height: 400px;
-      width: auto; }
-    #site #image_fallback.js {
-      display: none; }
+    background-color: #fff;
+    z-index: 2000;
+    display: none;
+    cursor: url(../image/close.png), auto;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important; }
+    #site #modal_container:hover {
+      cursor: url(../image/close.png), auto; }
 
 /*# sourceMappingURL=main.css.map */
