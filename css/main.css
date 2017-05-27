@@ -56,6 +56,8 @@ table {
 #site {
   font-family: sans-serif;
   font-size: 0.8rem; }
+  #site.light_box {
+    overflow: hidden; }
   #site .gray {
     color: #bbb; }
   #site a:link,

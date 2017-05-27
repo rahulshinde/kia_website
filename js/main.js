@@ -58,9 +58,11 @@ Site.openModal = function(){
   Site.modal_container.toggle();
   console.log($(this).data('src'));
   $('#modal_container').css('background', 'url(' + $(this).data('src') + ')');
+  $('#site').addClass('light_box');
 
 }
 
 Site.closeModal = function(){
   Site.modal_container.toggle();
+  $('#site').removeClass('light_box');
 }
