@@ -83,7 +83,7 @@ table {
     #site header #header_text {
       display: inline-block;
       vertical-align: middle;
-      padding-left: 1rem; }
+      padding-left: 0.3rem; }
     #site header img {
       display: inline-block;
       vertical-align: middle;
@@ -94,6 +94,15 @@ table {
       right: 0;
       top: 0;
       display: inline-block; }
+      @media screen and (max-width: 740px) {
+        #site header nav {
+          top: 4.3rem;
+          max-height: 8rem;
+          overflow: hidden;
+          transition: max-height ease 0.3s;
+          -webkit-transition: max-height ease 0.3s; }
+          #site header nav.scroll {
+            max-height: 0; } }
       #site header nav ul {
         display: inline-block; }
         #site header nav ul li {
@@ -101,6 +110,12 @@ table {
           line-height: 3.3rem;
           display: inline-block;
           vertical-align: middle; }
+          @media screen and (max-width: 740px) {
+            #site header nav ul li {
+              display: block;
+              line-height: 1em;
+              text-align: right;
+              padding-bottom: 1rem; } }
   #site #about {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -117,15 +132,21 @@ table {
       padding: 0;
       max-height: 0; }
   #site #bio {
-    width: 48%;
+    width: 30rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 10%;
     max-width: 30rem; }
+    @media screen and (max-width: 740px) {
+      #site #bio {
+        display: none; } }
   #site #contact {
     position: absolute;
     top: 1rem;
     right: 10.3rem; }
+    @media screen and (max-width: 1100px) {
+      #site #contact {
+        display: none; } }
   #site #currently {
     position: fixed;
     top: 7.5rem;
@@ -139,6 +160,9 @@ table {
     z-index: 20;
     transition: top ease 0.3s;
     -webkit-transition: top ease 0.3s; }
+    @media screen and (max-width: 740px) {
+      #site #currently {
+        top: 11.5rem; } }
     #site #currently h1 {
       text-align: center;
       line-height: 3rem;
@@ -155,6 +179,9 @@ table {
     overflow-y: hidden;
     transition: padding-top ease 0.3s;
     -webkit-transition: padding-top ease 0.3s; }
+    @media screen and (max-width: 740px) {
+      #site #projects {
+        padding-top: 14.5rem; } }
     #site #projects.scroll {
       padding-top: 6.2rem; }
     #site #projects img:hover {

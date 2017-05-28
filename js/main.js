@@ -19,11 +19,13 @@ Site.toggleHeader = function(){
   if (Site.scroll_position > 0 && !$('#about').hasClass('scroll')){
     $('#about').addClass('scroll');
     $('#currently').addClass('scroll');
+    $('nav').addClass('scroll');
     $('#projects').addClass('scroll');
   } else if (Site.scroll_position <= 0 && $('#about').hasClass('scroll')){
     $('#about').removeClass('scroll');
     $('#currently').removeClass('scroll');
     $('#projects').removeClass('scroll');
+    $('nav').removeClass('scroll');
   }
 }
 
