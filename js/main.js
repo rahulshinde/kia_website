@@ -3,6 +3,7 @@ Site = {}
 $(document).ready( function(){
   $(document).on('scroll', Site.toggleHeader);
   Site.modal_container = $('#modal_container');
+  Site.video_modal_container = $('#video_modal_container');
 
   setTimeout(function(){
     Site.loadImages();
@@ -10,6 +11,7 @@ $(document).ready( function(){
 
   $(window).on('resize', Site.loadImages);
   Site.modal_container.on('click', Site.closeModal);
+  Site.video_modal_container.on('click', Site.closeVideoModal);
   
 })
 
@@ -54,6 +56,7 @@ Site.loadImages = function(){
 
 Site.setupModal = function(){
   $('.open_modal').off('click').on('click', Site.openModal);
+  $('.open_video_modal').off('click').on('click', Site.openVideoModal);
 }
 
 Site.openModal = function(){
@@ -64,7 +67,21 @@ Site.openModal = function(){
 
 }
 
+Site.openVideoModal = function(){
+  Site.video_modal_container.toggle();
+  $('#video_modal_container source').attr('src', $(this).data('src'));
+  $("video")[0].load();
+  $('#site').addClass('light_box');
+
+}
+
 Site.closeModal = function(){
   Site.modal_container.toggle();
+  $('#site').removeClass('light_box');
+}
+
+Site.closeVideoModal = function(){
+  Site.video_modal_container.toggle();
+  $("video")[0].pause();
   $('#site').removeClass('light_box');
 }
