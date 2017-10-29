@@ -37,7 +37,7 @@ Site.keyCommand = function(e){
     }
 
     if(e.keyCode === 37){
-      Site.modalNext();
+      Site.modalPrev();
     }
 
     if(e.keyCode === 39){
@@ -73,19 +73,29 @@ Site.clearFilters = function(){
 
 Site.setFilter = function(){
   $('.filter_show_all').removeClass('selected');
-  if (Site.filtering){
-    var class_name = $(this).data('show');
-    $(this).addClass('selected');
-    $('.' + class_name).addClass('visible');
-    Site.loadImages();
-  } else{
-    $(this).addClass('selected');
-    $('.open_modal').removeClass('visible');
-    var class_name = $(this).data('show');
-    $('.' + class_name).addClass('visible');
-    Site.filtering = true;
-    Site.loadImages();
-  }
+  $('.filter_button').removeClass('selected');
+
+  $(this).addClass('selected');
+  $('.open_modal').removeClass('visible');
+  var class_name = $(this).data('show');
+  $('.' + class_name).addClass('visible');
+  Site.filtering = true;
+  Site.loadImages();
+
+
+  // if (Site.filtering){
+  //   var class_name = $(this).data('show');
+  //   $(this).addClass('selected');
+  //   $('.' + class_name).addClass('visible');
+  //   Site.loadImages();
+  // } else{
+  //   $(this).addClass('selected');
+  //   $('.open_modal').removeClass('visible');
+  //   var class_name = $(this).data('show');
+  //   $('.' + class_name).addClass('visible');
+  //   Site.filtering = true;
+  //   Site.loadImages();
+  // }
 }
 
 Site.loadImages = function(){
