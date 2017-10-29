@@ -237,7 +237,7 @@ table {
       top: 0;
       bottom: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.95);
       background-size: contain !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
