@@ -49,19 +49,55 @@
     </section>
 
     <section id="projects">
-      <div id="currently">
-        <h1>currently</h1>
+      <div id="tags">
+        sort by: 
+        <span class="selected filter_show_all" data-show="all">all</span>,
+        <span class="filter_button" data-show="graphic_design">graphic design</span>,
+        <span class="filter_button" data-show="type_design">type design</span>,
+        <span class="filter_button" data-show="web_design">web design</span>,
+        <span class="filter_button" data-show="identity_design">identity design</span>,
+        <span class="filter_button" data-show="print">print</span>,
+        <span class="filter_button" data-show="digital">digital</span>
       </div>
 
       <div id="original" class="image_container">
-        <img class="open_modal" src="http://placekitten.com/500/600" data-src="http://placekitten.com/500/600"><img class="open_modal" src="http://placekitten.com/500/300" data-src="http://placekitten.com/500/300"><img class="open_modal" src="http://placekitten.com/400/800" data-src="http://placekitten.com/400/800"><img class="open_modal" src="http://placekitten.com/300/600" data-src="http://placekitten.com/300/600"><img class="open_modal" src="http://placekitten.com/300/600" data-src="http://placekitten.com/300/600"><img class="open_modal" src="http://placekitten.com/500/600" data-src="http://placekitten.com/500/600"><img class="open_modal" src="http://placekitten.com/500/300" data-src="http://placekitten.com/500/300"><img class="open_modal" src="http://placekitten.com/500/300" data-src="http://placekitten.com/500/300"><img class="open_modal" src="http://placekitten.com/300/600" data-src="http://placekitten.com/300/600"><img class="open_modal" src="http://placekitten.com/800/800" data-src="http://placekitten.com/800/800"><img class="open_video_modal" src="http://placekitten.com/800/800" data-src="video/big_buck_bunny.mp4">
+        <img class="open_modal visible type_design" 
+             src="http://kiatas.me/type/static/img/bitalettering01.png" 
+             data-date="2017" data-caption = "Test caption what's good 1" data-src="http://kiatas.me/type/static/img/bitalettering01.png"
+        
+        ><img class="open_modal visible type_design" src="http://kiatas.me/type/static/img/naudin01.png" data-date="2017" data-caption = "Test caption what's good 2" data-src="http://kiatas.me/type/static/img/naudin01.png"
+        
+        ><img class="open_modal visible type_design" src="http://kiatas.me/type/static/img/jeder01.png" data-date="2017" data-caption = "Test caption what's good 3" data-src="http://kiatas.me/type/static/img/jeder01.png"
+
+        ><img class="open_modal visible type_design" src="http://kiatas.me/type/static/img/jeder06.png" data-date="2017" data-caption = "Test caption what's good 4" data-src="http://kiatas.me/type/static/img/jeder06.png"
+
+        ><img class="open_modal visible graphic_design" src="http://kiatas.me/type/static/img/nike01.png" data-date="2017" data-caption = "Test caption what's good 5" data-src="http://kiatas.me/type/static/img/nike01.png"
+
+        ><img class="open_modal visible graphic_design" src="http://kiatas.me/type/static/img/varoom03.jpg" data-date="2017" data-caption = "Test caption what's good 6" data-src="http://kiatas.me/type/static/img/varoom03.jpg"
+
+        ><img class="open_modal visible graphic_design" src="http://kiatas.me/type/static/img/SLEEVES01web.jpg" data-date="2017" data-caption = "Test caption what's good 7" data-src="http://kiatas.me/type/static/img/SLEEVES01web.jpg"
+
+        ><img class="open_modal visible identity_design" src="http://kiatas.me/type/static/img/SLEEVES02web.jpg" data-date="2017" data-caption = "Test caption what's good 8" data-src="http://kiatas.me/type/static/img/SLEEVES02web.jpg"
+
+        ><img class="open_modal visible identity_design" src="http://kiatas.me/type/static/img/SLEEVES03web.jpg" data-date="2017" data-caption = "Test caption what's good 9" data-src="http://kiatas.me/type/static/img/SLEEVES03web.jpg"
+
+        ><img class="open_modal visible identity_design" src="http://kiatas.me/type/static/img/pre05.png" data-date="2017" data-caption = "Test caption what's good 10" data-src="http://kiatas.me/type/static/img/pre05.png">
       </div>
     </section>
 
-    <div id="modal_container"></div>
-    <video autoplay loop id="video_modal_container">
-      <source src="" type="video/mp4">
-    </video>
+    <div id="modal_container">
+      <span class="modal_close">Esc</span>
+      <span class="modal_prev">Prev</span>
+      <span class="modal_next">Next</span>
+      <span class="modal_caption"></span>
+      <span class="modal_date"></span>
+      <div id="modal_background"></div>
+      <span class="white modal_close">Esc</span>
+      <span class="white modal_prev">Prev</span>
+      <span class="white modal_next">Next</span>
+      <span class="white modal_caption"></span>
+      <span class="white modal_date"></span>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/main.js"></script>
