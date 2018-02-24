@@ -1,7 +1,7 @@
 Site = {}
 
 $(document).ready( function(){
-  $(document).on('scroll', Site.toggleHeader);
+  // $(document).on('scroll', Site.toggleHeader);
   Site.modal_container = $('#modal_container');
   Site.video_modal_container = $('#video_modal_container');
 
@@ -14,6 +14,8 @@ $(document).ready( function(){
   $('.filter_show_all').on('click', Site.clearFilters);
 
   $('.filter_button').on('click', Site.setFilter);
+
+  $('#information').on('click', Site.scrollToBottom);
 
   Site.modal_background = $('#modal_background');
   Site.modal_caption = $('.modal_caption');
@@ -47,21 +49,21 @@ Site.keyCommand = function(e){
   }
 }
 
-Site.toggleHeader = function(){
-  Site.scroll_position = $(document).scrollTop();
+// Site.toggleHeader = function(){
+//   Site.scroll_position = $(document).scrollTop();
 
-  if (Site.scroll_position > 0 && !$('#about').hasClass('scroll')){
-    $('#about').addClass('scroll');
-    $('#tags').addClass('scroll');
-    $('nav').addClass('scroll');
-    $('#projects').addClass('scroll');
-  } else if (Site.scroll_position <= 0 && $('#about').hasClass('scroll')){
-    $('#about').removeClass('scroll');
-    $('#tags').removeClass('scroll');
-    $('#projects').removeClass('scroll');
-    $('nav').removeClass('scroll');
-  }
-}
+//   if (Site.scroll_position > 0 && !$('#about').hasClass('scroll')){
+//     $('#about').addClass('scroll');
+//     $('#tags').addClass('scroll');
+//     $('nav').addClass('scroll');
+//     $('#projects').addClass('scroll');
+//   } else if (Site.scroll_position <= 0 && $('#about').hasClass('scroll')){
+//     $('#about').removeClass('scroll');
+//     $('#tags').removeClass('scroll');
+//     $('#projects').removeClass('scroll');
+//     $('nav').removeClass('scroll');
+//   }
+// }
 
 Site.clearFilters = function(){
   $('.filter_button').removeClass('selected');
@@ -138,7 +140,6 @@ Site.setupModal = function(){
   });
 
   $('.open_modal').on('click', Site.openModal);
-  console.log(Site.visible_images);
 }
 
 Site.openModal = function(){
@@ -199,4 +200,9 @@ Site.getIndex = function(arr, k){
 Site.closeModal = function(){
   Site.modal_container.removeClass('show');
   $('#site').removeClass('light_box');
+}
+
+Site.scrollToBottom = function(){
+  console.log('hello');
+  $("html, body").animate({ scrollTop: $(document).height() }, 1500);
 }
