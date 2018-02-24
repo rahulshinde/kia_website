@@ -6,7 +6,7 @@ html {
 
 @font-face {
   font-family: "Pantasia";
-  src: url("/fonts/Pantasia-Regular.ttf"), url("/fonts/Pantasia-Regular.woff2") format("woff2"), url("/fonts/Pantasia-Regular.woff") format("woff"); }
+  src: url("../fonts/Pantasia-Regular.ttf"), url("../fonts/Pantasia-Regular.woff2") format("woff2"), url("/fonts/Pantasia-Regular.woff") format("woff"); }
 /* !!! CSS RESET !!! */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
