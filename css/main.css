@@ -6,7 +6,7 @@ html {
 
 @font-face {
   font-family: "Pantasia";
-  src: url("../fonts/Pantasia-Regular.ttf"), url("../fonts/Pantasia-Regular.woff2") format("woff2"), url("/fonts/Pantasia-Regular.woff") format("woff"); }
+  src: url("../fonts/Pantasia-Regular.ttf"), url("../fonts/Pantasia-Regular.woff2") format("woff2"), url("../fonts/Pantasia-Regular.woff") format("woff"); }
 /* !!! CSS RESET !!! */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -58,10 +58,16 @@ table {
 
 html {
   font-size: 18px; }
+  @media screen and (max-width: 850px) {
+    html {
+      font-size: 16px; } }
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 18px; } }
 
 #site {
   font-family: 'Pantasia', serif;
-  font-size: 1rem; }
+  font-size: 0.8rem; }
   #site.light_box {
     overflow: hidden; }
   #site .gray {
@@ -90,12 +96,23 @@ html {
       vertical-align: bottom;
       top: 1.6rem;
       left: 8.3%; }
+      @media screen and (max-width: 768px) {
+        #site header #header_text {
+          left: calc(3.5rem + 1.6rem); } }
+      @media screen and (max-width: 400px) {
+        #site header #header_text {
+          top: 1.2rem; }
+          #site header #header_text #design_practice {
+            display: block; } }
     #site header .header_link {
       display: inline-block;
       text-transform: uppercase; }
       #site header .header_link:hover {
         cursor: pointer;
         color: #f00; }
+      @media screen and (max-width: 768px) {
+        #site header .header_link#index {
+          display: none; } }
     #site header img {
       display: inline-block;
       vertical-align: middle;
@@ -104,29 +121,28 @@ html {
   #site #tags {
     position: fixed;
     top: 1.6rem;
-    right: 1.6rem;
-    width: 41%;
+    left: 58.1%;
+    width: calc(41% - 1.6rem);
     background-color: transparent;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     z-index: 20;
     transition: top ease 0.3s;
     -webkit-transition: top ease 0.3s; }
+    @media screen and (max-width: 768px) {
+      #site #tags {
+        display: none; } }
     #site #tags span {
       line-height: auto;
       display: inline;
       margin: 0 auto;
       color: #bbb; }
-      #site #tags span:hover {
+      #site #tags span:hover, #site #tags span.selected {
         cursor: pointer;
         color: #000;
-        background-color: #fff;
+        background-color: transparent;
         cursor: pointer;
         text-decoration: underline; }
-      #site #tags span.selected {
-        color: #000;
-        text-decoration: underline;
-        background-color: #fff; }
   #site footer {
     width: 100%;
     padding: 1.6rem;
@@ -136,21 +152,32 @@ html {
       margin-bottom: 1em; }
     #site footer .footer_large {
       font-size: 1.6rem;
-      width: 58%; }
+      width: calc(58.1% - 1.6rem); }
+      @media screen and (max-width: 768px) {
+        #site footer .footer_large {
+          width: 100%; } }
     #site footer .footer_small {
       position: absolute;
-      left: calc(58% + 1.6rem);
+      left: calc(58.1%);
       right: 1.6rem;
       bottom: 1.6rem; }
+      @media screen and (max-width: 768px) {
+        #site footer .footer_small {
+          position: relative;
+          left: 0;
+          bottom: auto; } }
+  #site #contact,
+  #site #site_credits {
+    margin-bottom: 0; }
+  @media screen and (max-width: 768px) {
+    #site #contact {
+      margin-bottom: 1em; } }
   #site #projects {
     padding-top: 6.3rem;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: padding-top ease 0.3s;
     -webkit-transition: padding-top ease 0.3s; }
-    @media screen and (max-width: 740px) {
-      #site #projects {
-        padding-top: 14.5rem; } }
     #site #projects.scroll {
       padding-top: 5.4rem; }
     #site #projects img:hover {
@@ -159,18 +186,31 @@ html {
     height: 20rem;
     display: inline-block;
     white-space: nowrap; }
+    #site .image_container span {
+      display: none; }
+    @media screen and (max-width: 768px) {
+      #site .image_container span {
+        display: block;
+        position: relative;
+        z-index: 100;
+        width: 100%;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+        box-sizing: border-box;
+        white-space: pre-wrap; } }
     #site .image_container img {
       height: 100%;
       width: auto;
       display: inline-block; }
-      @media screen and (max-width: 740px) {
+      @media screen and (max-width: 768px) {
         #site .image_container img {
-          border-right: 0px solid; } }
+          border-right: 0px solid;
+          margin-bottom: 1em; } }
     #site .image_container .open_modal {
       display: none; }
       #site .image_container .open_modal.visible {
         display: inline-block; }
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 768px) {
     #site #original {
       display: block;
       height: auto;
@@ -182,7 +222,7 @@ html {
     position: relative;
     z-index: 1;
     margin-top: -0.2rem; }
-    @media screen and (max-width: 740px) {
+    @media screen and (max-width: 768px) {
       #site .repeat {
         display: none; } }
   #site #modal_container {
@@ -204,7 +244,7 @@ html {
       z-index: 10; }
     #site #modal_container span {
       position: fixed;
-      font-size: 3rem;
+      font-size: 2rem;
       color: #000;
       z-index: 20;
       mix-blend-mode: difference; }
@@ -237,7 +277,7 @@ html {
       right: 0; }
     #site #modal_container.show {
       display: block; }
-      @media screen and (max-width: 740px) {
+      @media screen and (max-width: 768px) {
         #site #modal_container.show {
           display: none; } }
   #site #video_modal_container {
@@ -263,19 +303,32 @@ html {
     width: 16.6%; }
     #site #project_headings span.date {
       width: 8.3%; }
+  @media screen and (max-width: 768px) {
+    #site #project_headings {
+      display: none; } }
 #site #project_index {
-  padding-top: 7rem; }
+  padding-top: 6.85rem; }
+  @media screen and (max-width: 768px) {
+    #site #project_index {
+      top: 6.3rem; } }
 #site .project_line {
   display: none;
   margin-bottom: 1rem; }
   #site .project_line.visible {
     display: block; }
   #site .project_line img {
-    margin-left: 1.6rem; }
+    margin-left: 1.6rem;
+    padding-bottom: 1.75rem; }
   #site .project_line.wide img {
     width: 58%; }
   #site .project_line.narrow img {
     width: 33%; }
+  @media screen and (max-width: 768px) {
+    #site .project_line img {
+      width: 100% !important;
+      margin-left: 0 !important;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
 #site .project_info {
   /*margin-left: 8.3%;*/
   width: 100%;
@@ -283,7 +336,27 @@ html {
   position: -webkit-sticky;
   top: 6.8rem;
   margin-bottom: 1rem; }
+  #site .project_info .comma {
+    display: none; }
+  @media screen and (max-width: 768px) {
+    #site .project_info {
+      padding: 0 1.6rem;
+      position: relative;
+      top: 0;
+      white-space: pre-wrap; }
+      #site .project_info span {
+        display: inline !important;
+        width: auto !important;
+        padding-right: 0 !important; }
+        #site .project_info span:nth-child(1) {
+          margin-left: 0 !important; }
+      #site .project_info .comma {
+        display: inline; } }
   #site .project_info span {
+    vertical-align: top;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     font-size: 0.667rem;
     display: inline-block;
     width: 16.6%; }
